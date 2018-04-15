@@ -23,7 +23,7 @@ icon:
 tarball:
 	rm -rf build
 	rm -rf $(PKG)
-	tar -cvzf $(PKG) --exclude=$(PKG) *
+	tar -cvzf $(PKG) --exclude=$(PKG) --exclude=tests --exclude=run *$
 
 image:
 	docker build --pull -t $(VENDOR)/$(NAME):$(VERSION) .
